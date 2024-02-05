@@ -6,6 +6,7 @@ package com.mshdabiola.data.repository.fake
 
 import com.mshdabiola.data.repository.ArtRepository
 import com.mshdabiola.model.Art
+import com.mshdabiola.model.ArtMin
 import kotlinx.coroutines.flow.Flow
 import kotlinx.coroutines.flow.flow
 import javax.inject.Inject
@@ -20,7 +21,7 @@ class FakeArtRepository @Inject constructor() : ArtRepository {
         return art.id ?: lastIndex.toLong()
     }
 
-    override fun getAll(): Flow<List<Art>> {
+    override fun getAll(): Flow<List<ArtMin>> {
         return flow { data }
     }
 
