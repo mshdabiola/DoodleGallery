@@ -2,11 +2,11 @@
   "formatVersion": 1,
   "database": {
     "version": 1,
-    "identityHash": "faac7b4da3f464e58e4d86e6048a499b",
+    "identityHash": "bd190464946a66b94aaac9a99038865a",
     "entities": [
       {
-        "tableName": "note_table",
-        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `title` TEXT NOT NULL, `content` TEXT NOT NULL)",
+        "tableName": "art_table",
+        "createSql": "CREATE TABLE IF NOT EXISTS `${TABLE_NAME}` (`id` INTEGER PRIMARY KEY AUTOINCREMENT, `imagePath` TEXT NOT NULL, `paths` TEXT NOT NULL)",
         "fields": [
           {
             "fieldPath": "id",
@@ -15,14 +15,14 @@
             "notNull": false
           },
           {
-            "fieldPath": "title",
-            "columnName": "title",
+            "fieldPath": "imagePath",
+            "columnName": "imagePath",
             "affinity": "TEXT",
             "notNull": true
           },
           {
-            "fieldPath": "content",
-            "columnName": "content",
+            "fieldPath": "paths",
+            "columnName": "paths",
             "affinity": "TEXT",
             "notNull": true
           }
@@ -40,7 +40,7 @@
     "views": [],
     "setupQueries": [
       "CREATE TABLE IF NOT EXISTS room_master_table (id INTEGER PRIMARY KEY,identity_hash TEXT)",
-      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'faac7b4da3f464e58e4d86e6048a499b')"
+      "INSERT OR REPLACE INTO room_master_table (id,identity_hash) VALUES(42, 'bd190464946a66b94aaac9a99038865a')"
     ]
   }
 }

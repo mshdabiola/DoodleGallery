@@ -7,11 +7,11 @@ package com.mshdabiola.database.model
 import androidx.room.Entity
 import androidx.room.PrimaryKey
 
-@Entity(tableName = "note_table")
+@Entity(tableName = "art_table")
 data class ArtEntity(
     @PrimaryKey(true)
     val id: Long?,
-    val imagePath: String ,
-    val drawPaths: String ,
+    val imagePath: String,
+    val paths: String,
 )
 

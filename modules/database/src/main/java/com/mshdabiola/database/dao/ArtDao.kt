@@ -16,12 +16,12 @@ interface ArtDao {
     @Upsert
     suspend fun upsert(artEntity: ArtEntity): Long
 
-    @Query("SELECT * FROM note_table")
+    @Query("SELECT * FROM art_table")
     fun getAll(): Flow<List<ArtEntity>>
 
-    @Query("SELECT * FROM note_table WHERE id = :id")
+    @Query("SELECT * FROM art_table WHERE id = :id")
     fun getOne(id: Long): Flow<ArtEntity?>
 
-    @Query("DELETE FROM NOTE_TABLE WHERE id = :id")
+    @Query("DELETE FROM art_table WHERE id = :id")
     suspend fun delete(id: Long)
 }
