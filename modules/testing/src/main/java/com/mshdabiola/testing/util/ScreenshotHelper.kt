@@ -184,7 +184,7 @@ private fun generateDescription(
 }
 
 /**
- * Extracts some properties from the spec string. Note that this function is not exhaustive.
+ * Extracts some properties from the spec string. Art that this function is not exhaustive.
  */
 private fun extractSpecs(deviceSpec: String): TestDeviceSpecs {
     val specs = deviceSpec.substringAfter("spec:")

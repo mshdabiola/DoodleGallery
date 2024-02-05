@@ -7,20 +7,20 @@ package com.mshdabiola.database.dao
 import androidx.room.Dao
 import androidx.room.Query
 import androidx.room.Upsert
-import com.mshdabiola.database.model.NoteEntity
+import com.mshdabiola.database.model.ArtEntity
 import kotlinx.coroutines.flow.Flow
 
 @Dao
-interface NoteDao {
+interface ArtDao {
 
     @Upsert
-    suspend fun upsert(noteEntity: NoteEntity): Long
+    suspend fun upsert(artEntity: ArtEntity): Long
 
     @Query("SELECT * FROM note_table")
-    fun getAll(): Flow<List<NoteEntity>>
+    fun getAll(): Flow<List<ArtEntity>>
 
     @Query("SELECT * FROM note_table WHERE id = :id")
-    fun getOne(id: Long): Flow<NoteEntity?>
+    fun getOne(id: Long): Flow<ArtEntity?>
 
     @Query("DELETE FROM NOTE_TABLE WHERE id = :id")
     suspend fun delete(id: Long)

@@ -7,11 +7,11 @@ package com.mshdabiola.database
 import androidx.room.Database
 import androidx.room.RoomDatabase
 import androidx.room.TypeConverters
-import com.mshdabiola.database.dao.NoteDao
-import com.mshdabiola.database.model.NoteEntity
+import com.mshdabiola.database.dao.ArtDao
+import com.mshdabiola.database.model.ArtEntity
 
 @Database(
-    entities = [NoteEntity::class],
+    entities = [ArtEntity::class],
     version = 1,
 //    autoMigrations = [
 //        //AutoMigration(from = 2, to = 3, spec = DatabaseMigrations.Schema2to3::class),
@@ -21,9 +21,9 @@ import com.mshdabiola.database.model.NoteEntity
     exportSchema = true,
 )
 @TypeConverters()
-abstract class SkeletonDatabase : RoomDatabase() {
+abstract class DoodleDatabase : RoomDatabase() {
 
-    abstract fun getNoteDao(): NoteDao
+    abstract fun getArtDao(): ArtDao
 //
 //    abstract fun getPlayerDao(): PlayerDao
 //

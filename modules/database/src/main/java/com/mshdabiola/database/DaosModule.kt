@@ -4,7 +4,7 @@
 
 package com.mshdabiola.database
 
-import com.mshdabiola.database.dao.NoteDao
+import com.mshdabiola.database.dao.ArtDao
 import dagger.Module
 import dagger.Provides
 import dagger.hilt.InstallIn
@@ -15,7 +15,7 @@ import dagger.hilt.components.SingletonComponent
 object DaosModule {
 
     @Provides
-    fun noteDaoProvider(db: SkeletonDatabase): NoteDao {
-        return db.getNoteDao()
+    fun noteDaoProvider(db: DoodleDatabase): ArtDao {
+        return db.getArtDao()
     }
 }

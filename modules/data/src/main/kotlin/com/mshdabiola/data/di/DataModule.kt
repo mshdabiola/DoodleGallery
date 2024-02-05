@@ -4,8 +4,8 @@
 
 package com.mshdabiola.data.di
 
-import com.mshdabiola.data.repository.DefaultNoteRepository
-import com.mshdabiola.data.repository.NoteRepository
+import com.mshdabiola.data.repository.DefaultArtRepository
+import com.mshdabiola.data.repository.ArtRepository
 import com.mshdabiola.data.repository.OfflineFirstUserDataRepository
 import com.mshdabiola.data.repository.UserDataRepository
 import com.mshdabiola.data.util.ConnectivityManagerNetworkMonitor
@@ -20,7 +20,7 @@ import dagger.hilt.components.SingletonComponent
 abstract class DataModule {
 
     @Binds
-    internal abstract fun bindModelRepository(realModelRepository: DefaultNoteRepository): NoteRepository
+    internal abstract fun bindModelRepository(realModelRepository: DefaultArtRepository): ArtRepository
 
     @Binds
     internal abstract fun bindsNetworkMonitor(

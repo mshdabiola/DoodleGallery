@@ -6,14 +6,12 @@ package com.mshdabiola.database.model
 
 import androidx.room.Entity
 import androidx.room.PrimaryKey
-import com.mshdabiola.model.Note
 
 @Entity(tableName = "note_table")
-data class NoteEntity(
+data class ArtEntity(
     @PrimaryKey(true)
     val id: Long?,
-    val title: String,
-    val content: String,
+    val imagePath: String ,
+    val drawPaths: String ,
 )
 
-fun NoteEntity.asExternalNote() = Note(id, title, content)

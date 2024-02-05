@@ -8,22 +8,22 @@ import android.content.Context
 import androidx.room.Room
 import androidx.test.core.app.ApplicationProvider
 import androidx.test.ext.junit.runners.AndroidJUnit4
-import com.mshdabiola.database.dao.NoteDao
+import com.mshdabiola.database.dao.ArtDao
 import kotlinx.coroutines.test.runTest
 import org.junit.Before
 import org.junit.Test
 import org.junit.runner.RunWith
 
 @RunWith(AndroidJUnit4::class)
-class NoteDaoTest {
-    private lateinit var noteDao: NoteDao
-    private lateinit var db: SkeletonDatabase
+class ArtDaoTest {
+    private lateinit var artDao: ArtDao
+    private lateinit var db: DoodleDatabase
 
     @Before
     fun createDb() {
         val content = ApplicationProvider.getApplicationContext<Context>()
-        db = Room.inMemoryDatabaseBuilder(content, SkeletonDatabase::class.java).build()
-        noteDao = db.getNoteDao()
+        db = Room.inMemoryDatabaseBuilder(content, DoodleDatabase::class.java).build()
+        artDao = db.getArtDao()
     }
 
     @Test
