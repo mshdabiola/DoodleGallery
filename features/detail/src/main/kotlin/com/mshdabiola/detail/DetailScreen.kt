@@ -12,7 +12,6 @@ import androidx.compose.runtime.rememberCoroutineScope
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.tooling.preview.Preview
 import androidx.hilt.navigation.compose.hiltViewModel
-import com.mshdabiola.designsystem.component.DetailTopAppBar
 import com.mshdabiola.ui.TrackScreenViewEvent
 
 @Composable
@@ -50,11 +49,10 @@ internal fun DetailScreen(
 ) {
     val coroutineScope = rememberCoroutineScope()
     Column(modifier) {
-        DetailTopAppBar(
-            onNavigationClick = onBack,
-            onDeleteClick = onDelete,
-        )
-
+//        DetailTopAppBar(
+//            onNavigationClick = onBack,
+//            onDeleteClick = onDelete,
+//        )
     }
 
     TrackScreenViewEvent(screenName = "Detail")

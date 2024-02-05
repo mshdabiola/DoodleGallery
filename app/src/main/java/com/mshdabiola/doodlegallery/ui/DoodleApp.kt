@@ -13,15 +13,10 @@ import androidx.compose.foundation.layout.only
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.layout.safeDrawing
 import androidx.compose.foundation.layout.windowInsetsPadding
-import androidx.compose.material.icons.Icons
-import androidx.compose.material.icons.rounded.Add
-import androidx.compose.material3.ExtendedFloatingActionButton
-import androidx.compose.material3.Icon
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Scaffold
 import androidx.compose.material3.SnackbarHost
 import androidx.compose.material3.SnackbarHostState
-import androidx.compose.material3.Text
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
 import androidx.compose.runtime.remember
@@ -31,6 +26,7 @@ import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.testTag
 import androidx.compose.ui.semantics.semantics
 import androidx.compose.ui.semantics.testTagsAsResourceId
+import com.mshdabiola.designsystem.component.CtaButton
 import com.mshdabiola.designsystem.component.DoodleBackground
 import com.mshdabiola.designsystem.component.DoodleGradientBackground
 import com.mshdabiola.designsystem.theme.GradientColors
@@ -61,7 +57,6 @@ fun DoodleApp(
         ) {
             val snackbarHostState = remember { SnackbarHostState() }
 
-
             Scaffold(
                 modifier = Modifier.semantics {
                     testTagsAsResourceId = true
@@ -72,16 +67,13 @@ fun DoodleApp(
                 snackbarHost = { SnackbarHost(snackbarHostState) },
                 floatingActionButton = {
                     if (appState.currentDestination?.route == MAIN_ROUTE) {
-                        ExtendedFloatingActionButton(
+                        CtaButton(
                             modifier = Modifier
                                 .windowInsetsPadding(WindowInsets.safeDrawing)
                                 .testTag("add"),
                             onClick = { appState.navController.navigateToDetail(0) },
-                        ) {
-                            Icon(imageVector = Icons.Rounded.Add, contentDescription = "add note")
-//                            Spacer(modifier = )
-                            Text(text = "Add note")
-                        }
+
+                        )
                     }
                 },
 

@@ -16,7 +16,6 @@ interface UserDataRepository {
      */
     val userData: Flow<UserData>
 
-
     /**
      * Sets the desired theme brand.
      */

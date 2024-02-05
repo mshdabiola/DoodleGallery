@@ -7,9 +7,9 @@ package com.mshdabiola.doodlegallery
 import androidx.lifecycle.ViewModel
 import androidx.lifecycle.viewModelScope
 import com.mshdabiola.data.repository.UserDataRepository
-import com.mshdabiola.model.UserData
 import com.mshdabiola.doodlegallery.MainActivityUiState.Loading
 import com.mshdabiola.doodlegallery.MainActivityUiState.Success
+import com.mshdabiola.model.UserData
 import dagger.hilt.android.lifecycle.HiltViewModel
 import kotlinx.coroutines.flow.SharingStarted
 import kotlinx.coroutines.flow.StateFlow

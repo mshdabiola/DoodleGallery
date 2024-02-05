@@ -4,7 +4,6 @@
 
 package com.mshdabiola.data.repository
 
-import androidx.annotation.VisibleForTesting
 import com.mshdabiola.analytics.AnalyticsHelper
 import com.mshdabiola.datastore.DoodlePreferencesDataSource
 import com.mshdabiola.model.DarkThemeConfig

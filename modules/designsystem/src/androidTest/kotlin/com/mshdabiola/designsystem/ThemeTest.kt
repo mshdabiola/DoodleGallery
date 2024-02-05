@@ -20,6 +20,7 @@ import com.mshdabiola.designsystem.theme.DarkAndroidBackgroundTheme
 import com.mshdabiola.designsystem.theme.DarkAndroidColorScheme
 import com.mshdabiola.designsystem.theme.DarkAndroidGradientColors
 import com.mshdabiola.designsystem.theme.DarkDefaultColorScheme
+import com.mshdabiola.designsystem.theme.DoodleTheme
 import com.mshdabiola.designsystem.theme.GradientColors
 import com.mshdabiola.designsystem.theme.LightAndroidBackgroundTheme
 import com.mshdabiola.designsystem.theme.LightAndroidColorScheme
@@ -28,7 +29,6 @@ import com.mshdabiola.designsystem.theme.LightDefaultColorScheme
 import com.mshdabiola.designsystem.theme.LocalBackgroundTheme
 import com.mshdabiola.designsystem.theme.LocalGradientColors
 import com.mshdabiola.designsystem.theme.LocalTintTheme
-import com.mshdabiola.designsystem.theme.DoodleTheme
 import com.mshdabiola.designsystem.theme.TintTheme
 import org.junit.Rule
 import org.junit.Test

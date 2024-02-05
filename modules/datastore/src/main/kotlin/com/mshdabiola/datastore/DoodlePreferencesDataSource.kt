@@ -80,6 +80,4 @@ class DoodlePreferencesDataSource @Inject constructor(
             it.copy { this.shouldHideOnboarding = shouldHideOnboarding }
         }
     }
-
-
 }

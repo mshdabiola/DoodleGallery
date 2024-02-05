@@ -33,9 +33,9 @@ import com.google.firebase.remoteconfig.remoteConfigSettings
 import com.mshdabiola.analytics.AnalyticsHelper
 import com.mshdabiola.analytics.LocalAnalyticsHelper
 import com.mshdabiola.designsystem.theme.DoodleTheme
+import com.mshdabiola.doodlegallery.ui.DoodleApp
 import com.mshdabiola.model.DarkThemeConfig
 import com.mshdabiola.model.ThemeBrand
-import com.mshdabiola.doodlegallery.ui.DoodleApp
 import dagger.hilt.android.AndroidEntryPoint
 import kotlinx.coroutines.flow.collect
 import kotlinx.coroutines.flow.onEach
@@ -47,8 +47,6 @@ import javax.inject.Inject
 class MainActivity : ComponentActivity() {
     @Inject
     lateinit var lazyStats: dagger.Lazy<JankStats>
-
-
 
     @Inject
     lateinit var analyticsHelper: AnalyticsHelper
