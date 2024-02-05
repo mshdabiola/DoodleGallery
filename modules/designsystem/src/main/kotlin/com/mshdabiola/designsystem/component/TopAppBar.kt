@@ -29,7 +29,7 @@ import com.mshdabiola.designsystem.icon.SkIcons
 
 @OptIn(ExperimentalMaterial3Api::class)
 @Composable
-fun SkTopAppBar(
+fun DoodleTopAppBar(
     @StringRes titleRes: Int,
     navigationIcon: ImageVector,
     navigationIconContentDescription: String,
@@ -104,7 +104,7 @@ fun DetailTopAppBar(
 @Preview("Top App Bar")
 @Composable
 private fun SkTopAppBarPreview() {
-    SkTopAppBar(
+    DoodleTopAppBar(
         titleRes = android.R.string.untitled,
         navigationIcon = SkIcons.Search,
         navigationIconContentDescription = "Navigation icon",

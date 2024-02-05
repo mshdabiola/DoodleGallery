@@ -5,7 +5,7 @@
 package com.mshdabiola.data.repository
 
 import com.mshdabiola.common.network.Dispatcher
-import com.mshdabiola.common.network.NiaDispatchers
+import com.mshdabiola.common.network.DoodleDispatchers
 import com.mshdabiola.data.repository.model.asNoteEntity
 import com.mshdabiola.database.dao.NoteDao
 import com.mshdabiola.database.model.asExternalNote
@@ -19,7 +19,7 @@ import javax.inject.Inject
 
 class DefaultNoteRepository @Inject constructor(
     private val noteDao: NoteDao,
-    @Dispatcher(NiaDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
+    @Dispatcher(DoodleDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
 ) : NoteRepository {
     override suspend fun upsert(note: Note): Long {
         return withContext(ioDispatcher) {

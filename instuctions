@@ -18,3 +18,5 @@
 
     ./gradlew :app:generateReleaseBaselineProfile
 
+git branch master -u origin/master
+

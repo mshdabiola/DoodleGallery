@@ -5,7 +5,7 @@
 package com.mshdabiola.data.repository
 
 import com.mshdabiola.analytics.NoOpAnalyticsHelper
-import com.mshdabiola.datastore.SkPreferencesDataSource
+import com.mshdabiola.datastore.DoodlePreferencesDataSource
 import com.mshdabiola.datastore.di.testUserPreferencesDataStore
 import com.mshdabiola.model.DarkThemeConfig
 import com.mshdabiola.model.ThemeBrand
@@ -29,7 +29,7 @@ class OfflineFirstUserDataRepositoryTest {
 
     private lateinit var subject: OfflineFirstUserDataRepository
 
-    private lateinit var niaPreferencesDataSource: SkPreferencesDataSource
+    private lateinit var niaPreferencesDataSource: DoodlePreferencesDataSource
 
     private val analyticsHelper = NoOpAnalyticsHelper()
 
@@ -38,12 +38,12 @@ class OfflineFirstUserDataRepositoryTest {
 
     @Before
     fun setup() {
-        niaPreferencesDataSource = SkPreferencesDataSource(
+        niaPreferencesDataSource = DoodlePreferencesDataSource(
             tmpFolder.testUserPreferencesDataStore(testScope),
         )
 
         subject = OfflineFirstUserDataRepository(
-            skPreferencesDataSource = niaPreferencesDataSource,
+            doodlePreferencesDataSource = niaPreferencesDataSource,
             analyticsHelper,
         )
     }
@@ -183,16 +183,16 @@ class OfflineFirstUserDataRepositoryTest {
     @Test
     fun offlineFirstUserDataRepository_set_theme_brand_delegates_to_nia_preferences() =
         testScope.runTest {
-            subject.setThemeBrand(ThemeBrand.ANDROID)
+            subject.setThemeBrand(ThemeBrand.CONTRAST)
 
             assertEquals(
-                ThemeBrand.ANDROID,
+                ThemeBrand.CONTRAST,
                 subject.userData
                     .map { it.themeBrand }
                     .first(),
             )
             assertEquals(
-                ThemeBrand.ANDROID,
+                ThemeBrand.CONTRAST,
                 niaPreferencesDataSource
                     .userData
                     .map { it.themeBrand }

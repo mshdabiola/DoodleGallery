@@ -6,7 +6,7 @@ package com.mshdabiola.network.fake
 
 import JvmUnitTestFakeAssetManager
 import com.mshdabiola.common.network.Dispatcher
-import com.mshdabiola.common.network.NiaDispatchers
+import com.mshdabiola.common.network.DoodleDispatchers
 import kotlinx.coroutines.CoroutineDispatcher
 import kotlinx.serialization.json.Json
 import javax.inject.Inject
@@ -15,7 +15,7 @@ import javax.inject.Inject
  * [NiaNetworkDataSource] implementation that provides static news resources to aid development
  */
 class FakeNiaNetworkDataSource @Inject constructor(
-    @Dispatcher(NiaDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
+    @Dispatcher(DoodleDispatchers.IO) private val ioDispatcher: CoroutineDispatcher,
     private val networkJson: Json,
     private val assets: FakeAssetManager = JvmUnitTestFakeAssetManager,
 )

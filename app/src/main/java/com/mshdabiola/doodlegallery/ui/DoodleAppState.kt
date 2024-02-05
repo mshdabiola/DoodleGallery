@@ -2,7 +2,7 @@
  *abiola 2022
  */
 
-package com.mshdabiola.skeletonandroid.ui
+package com.mshdabiola.doodlegallery.ui
 
 import androidx.compose.material3.windowsizeclass.WindowSizeClass
 import androidx.compose.runtime.Composable
@@ -14,7 +14,6 @@ import androidx.navigation.NavDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.currentBackStackEntryAsState
 import androidx.navigation.compose.rememberNavController
-import com.mshdabiola.data.util.NetworkMonitor
 import com.mshdabiola.ui.TrackDisposableJank
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.flow.SharingStarted
@@ -22,52 +21,35 @@ import kotlinx.coroutines.flow.map
 import kotlinx.coroutines.flow.stateIn
 
 @Composable
-fun rememberSkAppState(
+fun rememberDoodleAppState(
     windowSizeClass: WindowSizeClass,
-    networkMonitor: NetworkMonitor,
     coroutineScope: CoroutineScope = rememberCoroutineScope(),
     navController: NavHostController = rememberNavController(),
-): SkAppState {
+): DoodleAppState {
     NavigationTrackingSideEffect(navController)
     return remember(
         navController,
         coroutineScope,
         windowSizeClass,
-        networkMonitor,
     ) {
-        SkAppState(
+        DoodleAppState(
             navController,
             coroutineScope,
             windowSizeClass,
-            networkMonitor,
         )
     }
 }
 
 @Stable
-class SkAppState(
+class DoodleAppState(
     val navController: NavHostController,
     val coroutineScope: CoroutineScope,
     val windowSizeClass: WindowSizeClass,
-    networkMonitor: NetworkMonitor,
 ) {
     val currentDestination: NavDestination?
         @Composable get() = navController
             .currentBackStackEntryAsState().value?.destination
 
-//    val shouldShowBottomBar: Boolean
-//        get() = windowSizeClass.widthSizeClass == WindowWidthSizeClass.Compact
-
-//    val shouldShowNavRail: Boolean
-//        get() = !shouldShowBottomBar
-
-    val isOffline = networkMonitor.isOnline
-        .map(Boolean::not)
-        .stateIn(
-            scope = coroutineScope,
-            started = SharingStarted.WhileSubscribed(5_000),
-            initialValue = false,
-        )
 }
 
 @Composable

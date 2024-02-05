@@ -2,7 +2,7 @@
  *abiola 2024
  */
 
-package com.mshdabiola.skeletonandroid
+package com.mshdabiola.doodlegallery
 
 import org.junit.Assert.assertEquals
 import org.junit.Test

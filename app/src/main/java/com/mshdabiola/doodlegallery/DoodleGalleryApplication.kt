@@ -2,14 +2,14 @@
  *abiola 2024
  */
 
-package com.mshdabiola.skeletonandroid
+package com.mshdabiola.doodlegallery
 
 import android.app.Application
 import dagger.hilt.android.HiltAndroidApp
 import timber.log.Timber
 
 @HiltAndroidApp
-class SkeletonApplication : Application() {
+class DoodleGalleryApplication : Application() {
 
     override fun onCreate() {
         super.onCreate()

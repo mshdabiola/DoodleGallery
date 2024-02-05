@@ -19,7 +19,7 @@ import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
 import com.mshdabiola.designsystem.icon.SkIcons
-import com.mshdabiola.designsystem.theme.SkTheme
+import com.mshdabiola.designsystem.theme.DoodleTheme
 
 @Composable
 fun SkButton(
@@ -93,8 +93,8 @@ private fun SkButtonContent(
 @ThemePreviews
 @Composable
 fun ButtonPreview() {
-    SkTheme {
-        SkBackground(modifier = Modifier.size(150.dp, 50.dp)) {
+    DoodleTheme {
+        DoodleBackground(modifier = Modifier.size(150.dp, 50.dp)) {
             SkButton(onClick = {}, text = { Text("Test button") })
         }
     }
@@ -103,8 +103,8 @@ fun ButtonPreview() {
 @ThemePreviews
 @Composable
 fun ButtonPreview2() {
-    SkTheme {
-        SkBackground(modifier = Modifier.size(150.dp, 50.dp)) {
+    DoodleTheme {
+        DoodleBackground(modifier = Modifier.size(150.dp, 50.dp)) {
             SkButton(onClick = {}, text = { Text("Test button") })
         }
     }
@@ -113,8 +113,8 @@ fun ButtonPreview2() {
 @ThemePreviews
 @Composable
 fun ButtonLeadingIconPreview() {
-    SkTheme {
-        SkBackground(modifier = Modifier.size(150.dp, 50.dp)) {
+    DoodleTheme {
+        DoodleBackground(modifier = Modifier.size(150.dp, 50.dp)) {
             SkButton(
                 onClick = {},
                 text = { Text("Test button") },

@@ -2,7 +2,7 @@
  *abiola 2022
  */
 
-package com.mshdabiola.skeletonandroid.di
+package com.mshdabiola.doodlegallery.di
 
 import android.app.Activity
 import android.util.Log

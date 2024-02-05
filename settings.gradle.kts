@@ -20,7 +20,7 @@ dependencyResolutionManagement {
     }
 }
 
-rootProject.name = "SkeletonAndroid"
+rootProject.name = "DoodleGallery"
 include(":app")
 include(":benchmarks")
 include(":modules:data")

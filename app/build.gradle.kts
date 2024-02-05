@@ -22,10 +22,10 @@ plugins {
 }
 
 android {
-    namespace = "com.mshdabiola.skeletonandroid"
+    namespace = "com.mshdabiola.doodlegallery"
 
     defaultConfig {
-        applicationId = "com.mshdabiola.skeletonandroid"
+        applicationId = "com.mshdabiola.doodlegallery"
         versionCode = 1
         versionName = "0.0.1" // X.Y.Z; X = Major, Y = minor, Z = Patch level
 
@@ -140,7 +140,7 @@ dependencyGuard {
 //android {
 //
 //    defaultConfig {
-//        applicationId = "com.mshdabiola.skeletonandroid"
+//        applicationId = "com.mshdabiola.doodlegallery"
 //
 //        versionCode = 1
 //        versionName = "1.0"

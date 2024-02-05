@@ -2,12 +2,11 @@
  *abiola 2024
  */
 
-package com.mshdabiola.skeletonandroid
+package com.mshdabiola.doodlegallery
 
 // import androidx.test.ext.junit.runners.AndroidJUnit4
 import androidx.test.platform.app.InstrumentationRegistry
 import org.junit.Test
-import kotlin.test.DefaultAsserter.assertEquals
 import kotlin.test.assertEquals
 
 /**
@@ -21,6 +20,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.mshdabiola.skeletonandroid.debug", appContext.packageName)
+        assertEquals("com.mshdabiola.doodlegallery.debug", appContext.packageName)
     }
 }

@@ -21,7 +21,6 @@ import androidx.compose.foundation.lazy.rememberLazyListState
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Text
 import androidx.compose.runtime.Composable
-import androidx.compose.runtime.LaunchedEffect
 import androidx.compose.runtime.getValue
 import androidx.compose.ui.Alignment
 import androidx.compose.ui.Modifier
@@ -38,7 +37,7 @@ import androidx.hilt.navigation.compose.hiltViewModel
 import androidx.lifecycle.compose.collectAsStateWithLifecycle
 import com.mshdabiola.designsystem.component.SkLoadingWheel
 import com.mshdabiola.designsystem.theme.LocalTintTheme
-import com.mshdabiola.designsystem.theme.SkTheme
+import com.mshdabiola.designsystem.theme.DoodleTheme
 import com.mshdabiola.main.R
 import com.mshdabiola.ui.MainState
 import com.mshdabiola.ui.MainState.Loading
@@ -51,14 +50,12 @@ import com.mshdabiola.ui.noteItem
 @Composable
 internal fun MainRoute(
     onClick: (Long) -> Unit,
-    onShowSnackbar: suspend (String, String?) -> Boolean,
     modifier: Modifier = Modifier,
     viewModel: MainViewModel = hiltViewModel(),
 ) {
     val feedState by viewModel.feedUiMainState.collectAsStateWithLifecycle()
     MainScreen(
         mainState = feedState,
-        onShowSnackbar = onShowSnackbar,
         modifier = modifier,
         onClick = onClick,
         shouldDisplayUndoBookmark = viewModel.shouldDisplayUndoBookmark,
@@ -72,7 +69,6 @@ internal fun MainRoute(
 internal fun MainScreen(
     mainState: MainState,
     onClick: (Long) -> Unit,
-    onShowSnackbar: suspend (String, String?) -> Boolean,
     modifier: Modifier = Modifier,
     shouldDisplayUndoBookmark: Boolean = false,
     undoBookmarkRemoval: () -> Unit = {},
@@ -81,16 +77,7 @@ internal fun MainScreen(
     val bookmarkRemovedMessage = stringResource(id = R.string.features_main_removed)
     val undoText = stringResource(id = R.string.features_main_undo)
 
-    LaunchedEffect(shouldDisplayUndoBookmark) {
-        if (shouldDisplayUndoBookmark) {
-            val snackBarResult = onShowSnackbar(bookmarkRemovedMessage, undoText)
-            if (snackBarResult) {
-                undoBookmarkRemoval()
-            } else {
-                clearUndoState()
-            }
-        }
-    }
+
 
     when (mainState) {
         Loading -> LoadingState(modifier)
@@ -192,7 +179,7 @@ private fun EmptyState(modifier: Modifier = Modifier) {
 @Preview
 @Composable
 private fun LoadingStatePreview() {
-    SkTheme {
+    DoodleTheme {
         LoadingState()
     }
 }
@@ -200,7 +187,7 @@ private fun LoadingStatePreview() {
 @Preview
 @Composable
 private fun MainListPreview() {
-    SkTheme {
+    DoodleTheme {
         MainList(
             feedMainState = Success(
                 listOf(
@@ -232,7 +219,7 @@ private fun MainListPreview() {
 @Preview
 @Composable
 private fun EmptyStatePreview() {
-    SkTheme {
+    DoodleTheme {
         EmptyState()
     }
 }

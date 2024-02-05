@@ -25,7 +25,7 @@ import androidx.compose.ui.unit.dp
 import com.mshdabiola.designsystem.theme.GradientColors
 import com.mshdabiola.designsystem.theme.LocalBackgroundTheme
 import com.mshdabiola.designsystem.theme.LocalGradientColors
-import com.mshdabiola.designsystem.theme.SkTheme
+import com.mshdabiola.designsystem.theme.DoodleTheme
 import kotlin.math.tan
 
 /**
@@ -36,7 +36,7 @@ import kotlin.math.tan
  * @param content The background content.
  */
 @Composable
-fun SkBackground(
+fun DoodleBackground(
     modifier: Modifier = Modifier,
     content: @Composable () -> Unit,
 ) {
@@ -62,7 +62,7 @@ fun SkBackground(
  * @param content The background content.
  */
 @Composable
-fun SkGradientBackground(
+fun DoodleGradientBackground(
     modifier: Modifier = Modifier,
     gradientColors: GradientColors = LocalGradientColors.current,
     content: @Composable () -> Unit,
@@ -138,47 +138,47 @@ annotation class ThemePreviews
 @ThemePreviews
 @Composable
 fun BackgroundDefault() {
-    SkTheme(disableDynamicTheming = true) {
-        SkBackground(Modifier.size(100.dp), content = {})
+    DoodleTheme(disableDynamicTheming = true) {
+        DoodleBackground(Modifier.size(100.dp), content = {})
     }
 }
 
 @ThemePreviews
 @Composable
 fun BackgroundDynamic() {
-    SkTheme(disableDynamicTheming = false) {
-        SkBackground(Modifier.size(100.dp), content = {})
+    DoodleTheme(disableDynamicTheming = false) {
+        DoodleBackground(Modifier.size(100.dp), content = {})
     }
 }
 
 @ThemePreviews
 @Composable
 fun BackgroundAndroid() {
-    SkTheme(androidTheme = true) {
-        SkBackground(Modifier.size(100.dp), content = {})
+    DoodleTheme(androidTheme = true) {
+        DoodleBackground(Modifier.size(100.dp), content = {})
     }
 }
 
 @ThemePreviews
 @Composable
 fun GradientBackgroundDefault() {
-    SkTheme(disableDynamicTheming = true) {
-        SkGradientBackground(Modifier.size(100.dp), content = {})
+    DoodleTheme(disableDynamicTheming = true) {
+        DoodleGradientBackground(Modifier.size(100.dp), content = {})
     }
 }
 
 @ThemePreviews
 @Composable
 fun GradientBackgroundDynamic() {
-    SkTheme(disableDynamicTheming = false) {
-        SkGradientBackground(Modifier.size(100.dp), content = {})
+    DoodleTheme(disableDynamicTheming = false) {
+        DoodleGradientBackground(Modifier.size(100.dp), content = {})
     }
 }
 
 @ThemePreviews
 @Composable
 fun GradientBackgroundAndroid() {
-    SkTheme(androidTheme = true) {
-        SkGradientBackground(Modifier.size(100.dp), content = {})
+    DoodleTheme(androidTheme = true) {
+        DoodleGradientBackground(Modifier.size(100.dp), content = {})
     }
 }

@@ -2,7 +2,7 @@
  *abiola 2022
  */
 
-package com.mshdabiola.skeletonandroid.navigation
+package com.mshdabiola.doodlegallery.navigation
 
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
@@ -11,12 +11,11 @@ import com.mshdabiola.detail.navigation.MAIN_ROUTE
 import com.mshdabiola.detail.navigation.detailScreen
 import com.mshdabiola.detail.navigation.mainScreen
 import com.mshdabiola.detail.navigation.navigateToDetail
-import com.mshdabiola.skeletonandroid.ui.SkAppState
+import com.mshdabiola.doodlegallery.ui.DoodleAppState
 
 @Composable
-fun SkNavHost(
-    appState: SkAppState,
-    onShowSnackbar: suspend (String, String?) -> Boolean,
+fun DoodleNavHost(
+    appState: DoodleAppState,
     modifier: Modifier = Modifier,
     startDestination: String = MAIN_ROUTE,
 ) {
@@ -26,7 +25,7 @@ fun SkNavHost(
         startDestination = startDestination,
         modifier = modifier,
     ) {
-        mainScreen(onShowSnackbar = onShowSnackbar, onClicked = navController::navigateToDetail)
-        detailScreen(onShowSnackbar, navController::popBackStack)
+        mainScreen(onClicked = navController::navigateToDetail)
+        detailScreen(navController::popBackStack)
     }
 }
