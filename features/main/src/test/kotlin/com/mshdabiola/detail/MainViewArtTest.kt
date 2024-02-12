@@ -4,7 +4,7 @@
 
 package com.mshdabiola.detail
 
-import com.mshdabiola.data.repository.fake.FakeNoteRepository
+import com.mshdabiola.data.repository.fake.FakeArtRepository
 import com.mshdabiola.testing.repository.TestUserDataRepository
 import com.mshdabiola.testing.util.MainDispatcherRule
 import kotlinx.coroutines.test.runTest
@@ -12,7 +12,7 @@ import org.junit.Before
 import org.junit.Rule
 import org.junit.Test
 
-class MainViewNoteTest {
+class MainViewArtTest {
     @get:Rule
     val dispatcherRule = MainDispatcherRule()
 
@@ -24,7 +24,7 @@ class MainViewNoteTest {
     fun setup() {
         viewModel = MainViewModel(
             userDataRepository = userDataRepository,
-            noteRepository = FakeNoteRepository(),
+            artRepository = FakeArtRepository(),
 
         )
     }

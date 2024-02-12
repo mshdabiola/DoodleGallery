@@ -18,7 +18,9 @@ import kotlinx.collections.immutable.toImmutableList
 
 
 @SuppressLint("MutableCollectionMutableState")
-class DrawingController {
+class DrawingController(
+   private val onTouchUp:()->Unit={}
+) {
     val colors = arrayOf(
         Color.Black,
         Color.Red,
@@ -216,6 +218,7 @@ class DrawingController {
 
     private fun setCompleteList(){
         _completePathData.value=unCompletePathData.value
+        onTouchUp()
 
     }
 

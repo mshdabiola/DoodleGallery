@@ -42,7 +42,6 @@ import com.mshdabiola.main.R
 import com.mshdabiola.ui.MainState
 import com.mshdabiola.ui.MainState.Loading
 import com.mshdabiola.ui.MainState.Success
-import com.mshdabiola.ui.NoteUiState
 import com.mshdabiola.ui.TrackScreenViewEvent
 
 @Composable
@@ -78,7 +77,7 @@ internal fun MainScreen(
                         DoodleTopAppBar(titleRes = com.mshdabiola.designsystem.R.string.modules_designsystem_app_name)
                     },
                 ) {
-                    if (mainState.noteUiStates.isNotEmpty()) {
+                    if (mainState.arts.isNotEmpty()) {
                         MainContent(
                             mainState,
                             onClick,
@@ -170,22 +169,6 @@ private fun MainListPreview() {
         MainContent(
             state = Success(
                 listOf(
-                    NoteUiState(
-                        id = 5257L,
-                        title = "Jacinto",
-                        description = "Charisma",
-                    ),
-                    NoteUiState(id = 7450L, title = "Dewayne", description = "Justan"),
-                    NoteUiState(id = 1352L, title = "Bjorn", description = "Daquan"),
-                    NoteUiState(id = 4476L, title = "Tonya", description = "Ivelisse"),
-                    NoteUiState(id = 6520L, title = "Raegan", description = "Katrena"),
-                    NoteUiState(id = 5136L, title = "Markis", description = "Giles"),
-                    NoteUiState(id = 6868L, title = "Virgilio", description = "Ashford"),
-                    NoteUiState(id = 7100L, title = "Larae", description = "Krystyn"),
-                    NoteUiState(id = 3210L, title = "Nigel", description = "Sergio"),
-                    NoteUiState(id = 7830L, title = "Kristy", description = "Jacobi"),
-                    NoteUiState(id = 1020L, title = "Kathlene", description = "Shlomo"),
-                    NoteUiState(id = 3365L, title = "Corin", description = "Ross"),
 
                 ),
             ),
